@@ -10,5 +10,6 @@ namespace PedidosApp
     {
         public double CalcularCosto(int km) => 20 * km;
         public string TipoEntrega() => "Dron";
+        //Olvidamos hacer los commits mientras resolviamos :(
     }
 }
