@@ -39,8 +39,16 @@
             this.lblProducto = new System.Windows.Forms.Label();
             this.lblPeso = new System.Windows.Forms.Label();
             this.lblDistancia = new System.Windows.Forms.Label();
+            this.dtgProductos = new System.Windows.Forms.DataGridView();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Urgente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Distancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDistancia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -97,9 +105,9 @@
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(161, 284);
+            this.btnCalcular.Location = new System.Drawing.Point(296, 195);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(114, 50);
+            this.btnCalcular.Size = new System.Drawing.Size(103, 36);
             this.btnCalcular.TabIndex = 6;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
@@ -141,11 +149,58 @@
             this.lblDistancia.TabIndex = 10;
             this.lblDistancia.Text = "Distancia :";
             // 
+            // dtgProductos
+            // 
+            this.dtgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cliente,
+            this.Producto,
+            this.Urgente,
+            this.Peso,
+            this.Distancia,
+            this.Costo});
+            this.dtgProductos.Location = new System.Drawing.Point(78, 294);
+            this.dtgProductos.Name = "dtgProductos";
+            this.dtgProductos.Size = new System.Drawing.Size(643, 144);
+            this.dtgProductos.TabIndex = 11;
+            this.dtgProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Cliente
+            // 
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.Name = "Cliente";
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            // 
+            // Urgente
+            // 
+            this.Urgente.HeaderText = "Urgente";
+            this.Urgente.Name = "Urgente";
+            // 
+            // Peso
+            // 
+            this.Peso.HeaderText = "Peso";
+            this.Peso.Name = "Peso";
+            // 
+            // Distancia
+            // 
+            this.Distancia.HeaderText = "Distancia";
+            this.Distancia.Name = "Distancia";
+            // 
+            // Costo
+            // 
+            this.Costo.HeaderText = "Costo";
+            this.Costo.Name = "Costo";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dtgProductos);
             this.Controls.Add(this.lblDistancia);
             this.Controls.Add(this.lblPeso);
             this.Controls.Add(this.lblProducto);
@@ -161,6 +216,7 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDistancia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,6 +235,13 @@
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.Label lblDistancia;
+        private System.Windows.Forms.DataGridView dtgProductos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Urgente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Peso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Distancia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
     }
 }
 
