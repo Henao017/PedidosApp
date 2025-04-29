@@ -47,5 +47,41 @@ namespace PedidosApp
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
+
+        private void lblResultado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtro = comboBox1.SelectedItem.ToString();
+
+                // Filtrar los pedidos según la categoría seleccionada
+                var pedidosFiltrados = RegistroPedidos.Instancia.Pedidos
+                    .Where(p => p.Producto.Equals(filtro, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+                // Limpiar el DataGridView antes de mostrar los resultados filtrados
+                dtgProductos.Rows.Clear();
+
+                // Agregar los pedidos filtrados al DataGridView
+                foreach (var pedido in pedidosFiltrados)
+                {
+                    dtgProductos.Rows.Add(pedido.Cliente, pedido.Producto, pedido.Urgente, pedido.Peso, pedido.Distancia, pedido.ObtenerCosto());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar: " + ex.Message);
+            }
+        }
     }
 }
